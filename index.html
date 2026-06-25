@@ -44,9 +44,11 @@
     background:linear-gradient(90deg,var(--dr-blue) 0 40%,#fff 40% 60%,var(--dr-red) 60% 100%);
   }
   header .hdr-logo{
-    position:absolute;top:30px;right:40px;width:62px;height:62px;
+    position:absolute;top:28px;right:20px;width:62px;height:62px;
     border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.25);
   }
+  /* keep title text clear of the absolutely-positioned icon */
+  .brand,h1,.sub{padding-right:90px}
   .brand{font-size:13px;letter-spacing:3px;text-transform:uppercase;opacity:.85;margin:0}
   h1{margin:6px 0 2px;font-size:30px;font-weight:800;letter-spacing:.5px}
   .sub{opacity:.9;font-size:15px;margin:0}
@@ -146,6 +148,27 @@
   footer .contact{font-size:12.5px;color:var(--muted);text-align:right}
   .note,.duo,.deposit,.totals,.preview,.item-head{break-inside:avoid;page-break-inside:avoid}
   .item-head{break-after:avoid;page-break-after:avoid}
+  @media (max-width:560px){
+    body{overflow-x:hidden}
+    .sheet{margin:0;max-width:100%;border-radius:0}
+    header .hdr-logo{width:48px;height:48px;top:24px;right:18px}
+    .brand,h1,.sub{padding-right:66px}
+    header{padding:28px 22px 24px}
+    .body{padding:24px 22px 10px}
+    footer{padding:20px 22px 28px}
+    h1{font-size:24px}
+    .meta{gap:18px}
+    .parties{flex-direction:column;gap:14px}
+    .parties .block{min-width:0}
+    .preview .desc,.duo .shot,.duo .desc{min-width:0}
+    .preview{flex-direction:column}
+    .preview img{width:55%;max-width:220px;margin:0 auto 6px}
+    .duo{flex-direction:column}
+    table{font-size:12px}
+    thead th,tbody td{padding:8px 9px}
+    .totals table{min-width:0;width:100%}
+    .totals td{padding:6px 9px}
+  }
   @media print{
     body{background:#fff}
     .sheet{box-shadow:none;margin:0;max-width:100%}
